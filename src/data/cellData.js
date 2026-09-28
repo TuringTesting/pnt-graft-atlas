@@ -179,6 +179,18 @@ export const cellData = {
     customPanel: 'nigrostriatal',
   },
 
+  da_neurite_in_graft: {
+    title: 'Dopaminergic Neurite at the Graft',
+    category: 'interface',
+    color: '#b07a45',
+    summary: 'Placeholder. Host dopaminergic processes extending toward and into the graft.',
+    description: ['Placeholder. Describe evidence for host TH+ fibers at or within the graft.'],
+    markers: [{ name: 'TH' }],
+    papers: [],
+    assets: { circuitDiagramUrl: null, images: [], videos: [] },
+    customPanel: null,
+  },
+  
   microglia: {
     title: 'Microglia',
     category: 'host',

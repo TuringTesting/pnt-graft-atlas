@@ -3,7 +3,7 @@
 Interactive 3D viewer for an autologous peripheral nerve tissue graft in the substantia nigra.
 React + Vite + Tailwind + Three.js / React Three Fiber / drei.
 
-**Live site:** https://YOUR-USERNAME.github.io/pnt-graft-atlas/
+**Live site:** https://TuringTesting.github.io/pnt-graft-atlas/
 
 ## Run locally
 
