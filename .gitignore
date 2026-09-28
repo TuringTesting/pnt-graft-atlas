@@ -1,0 +1,16 @@
+# Dependencies — recreated by `npm install`, never committed
+node_modules/
+
+# Build output — GitHub Actions rebuilds it on every push
+dist/
+
+# Editor / OS clutter
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+*.log
+
+# Blender autosaves / backups (keep the .blend itself if you want it versioned)
+*.blend1
+*.blend2
