@@ -6,7 +6,8 @@ This folder holds the **source** of the 3D model. The web app only ever reads th
 | File | What it is |
 |------|------------|
 | `graft_environment.blend` | The Blender working file — the thing you edit |
-| `build_starter_scene.py` | Builds a correctly tagged starter scene in a **new** Blender file (run once) |
+| `build_procedural_scene.py` | **Main model.** Procedural graft + SN scene with full cell populations; builds, tags and exports in one run (in a **new** file saved in `art/`) |
+| `build_starter_scene.py` | Earlier, simpler starter scene (horizontal graft); kept for reference |
 | `export_glb.py` | Exports the open `.blend` to `public/models/graft_environment.glb` with the right settings |
 
 ## The one rule
@@ -18,11 +19,13 @@ Object *names* don't matter to the app; keep them readable.
 
 ## Conventions
 
-- **Axes:** the graft runs along Blender's **X** axis, centred on the origin. Blender is Z-up;
-  the exporter converts to the web's Y-up automatically.
-- **Scale:** 1 Blender metre = 1 app unit. Graft ≈ 7 m long, 0.9 m radius; host volume ≈ 13 × 10 × 10 m.
+- **Axes:** the graft runs along Blender's **Z** axis (vertical), centred on the origin. The exporter
+  converts Blender's Z-up to the web's Y-up, so the graft stands upright in the app.
+- **Scale:** 1 Blender metre = 1 app unit. Graft ≈ 6.5 m tall, 0.72 m radius; host volume ≈ 9.6 m wide × 8 m tall.
   Staying near this size keeps the app's "Reset view" framing right.
-- **Collections:** `Host - substantia nigra`, `Interface`, `Graft` — organisation only; not used by the app.
+- **One cell = one object.** Each cell's soma and processes are joined into a single mesh carrying the `id`,
+  so clicking any part of it selects the whole cell.
+- **Collections / parent empties** (`Schwann_Cells`, `Microglia`, …) are organisation only; the app ignores them.
 - **Materials:** use the **Principled BSDF** only — Base Color, Roughness, Metallic, Alpha, and image textures
   export. Procedural texture nodes (Noise, Voronoi…) do **not** export unless baked to an image.
 - **Translucent objects:** Principled BSDF → Alpha < 1, and Material → Settings → Render Method: **Blended**.

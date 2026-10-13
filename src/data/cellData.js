@@ -52,7 +52,7 @@ export const cellData = {
   substantia_nigra: {
     title: 'Substantia Nigra (host tissue)',
     category: 'host',
-    color: '#64748b',
+    color: '#7c9ebf',
     pickPriority: 'background',
     summary: 'Midbrain nucleus receiving the graft; site of dopaminergic neuron loss in PD.',
     description: [
@@ -75,7 +75,7 @@ export const cellData = {
   pnt_graft: {
     title: 'Autologous Peripheral Nerve Tissue Graft',
     category: 'graft',
-    color: '#e8b04a',
+    color: '#8baab8',
     pickPriority: 'background',
     summary: 'Segment of the patient’s own sural nerve implanted into the SN at the time of DBS surgery.',
     description: [
@@ -96,7 +96,7 @@ export const cellData = {
   repair_schwann_cell: {
     title: 'Repair Schwann Cell',
     category: 'graft',
-    color: '#f5d06f',
+    color: '#f9c579',
     summary: 'Schwann cells reprogrammed after nerve injury into a pro-regenerative, trophic phenotype.',
     description: [
       'Placeholder. After injury, Schwann cells dedifferentiate, upregulate c-Jun, secrete neurotrophic factors (e.g. GDNF, BDNF), and form Bands of Büngner that guide axon growth.',
@@ -132,7 +132,7 @@ export const cellData = {
   graft_macrophage: {
     title: 'Macrophage',
     category: 'graft',
-    color: '#f97362',
+    color: '#e1a0d1',
     summary: 'Myeloid cells clearing myelin debris and shaping the graft’s repair environment.',
     description: ['Placeholder. Discuss infiltration, debris clearance, and polarization states over time post-implant.'],
     markers: [{ name: 'CD68' }, { name: 'CD163' }, { name: 'IBA1' }],
@@ -144,7 +144,7 @@ export const cellData = {
   endoneurial_fibroblast: {
     title: 'Endoneurial Fibroblast',
     category: 'graft',
-    color: '#c4a1ff',
+    color: '#99e7d1',
     summary: 'Stromal cells producing extracellular matrix within the nerve.',
     description: ['Placeholder.'],
     markers: [{ name: 'PDGFRα' }, { name: 'CD34' }],
@@ -153,10 +153,25 @@ export const cellData = {
     customPanel: null,
   },
 
+  col1a1_collagen: {
+    title: 'COL1A1+ Collagen Fibrils',
+    category: 'graft',
+    color: '#a6eaaa',
+    pickPriority: 'background',
+    summary: 'Longitudinal type I collagen fibrils forming the graft’s extracellular scaffold.',
+    description: [
+      'Placeholder. Describe the endoneurial/epineurial collagen matrix of the graft and its persistence or remodelling after implantation.',
+    ],
+    markers: [{ name: 'COL1A1' }],
+    papers: [{ title: 'Peripheral nerve extracellular matrix (search)', url: pubmed('peripheral nerve extracellular matrix collagen endoneurium') }],
+    assets: { circuitDiagramUrl: null, images: [], videos: [] },
+    customPanel: null,
+  },
+
   graft_vasculature: {
     title: 'Graft Vasculature',
     category: 'interface',
-    color: '#ef4444',
+    color: '#dd657c',
     summary: 'Blood vessels revascularizing the graft from host tissue.',
     description: ['Placeholder. Describe revascularization and vessel density relative to host SN.'],
     markers: [{ name: 'CD31' }, { name: 'Collagen IV' }],
@@ -168,7 +183,7 @@ export const cellData = {
   nigral_da_neuron: {
     title: 'Nigral Dopaminergic Neuron',
     category: 'host',
-    color: '#8b5a2b',
+    color: '#50b5ff',
     summary: 'Neuromelanin-pigmented TH+ neurons projecting to the striatum; progressively lost in PD.',
     description: [
       'Placeholder. Describe neuron density and morphology near vs. distal to the graft.',
@@ -182,7 +197,7 @@ export const cellData = {
   da_neurite_in_graft: {
     title: 'Dopaminergic Neurite at the Graft',
     category: 'interface',
-    color: '#b07a45',
+    color: '#50c8ff',
     summary: 'Placeholder. Host dopaminergic processes extending toward and into the graft.',
     description: ['Placeholder. Describe evidence for host TH+ fibers at or within the graft.'],
     markers: [{ name: 'TH' }],
@@ -194,7 +209,7 @@ export const cellData = {
   microglia: {
     title: 'Microglia',
     category: 'host',
-    color: '#38bdf8',
+    color: '#dae2f3',
     summary: 'Resident CNS immune cells responding at the graft–host interface.',
     description: ['Placeholder.'],
     markers: [{ name: 'IBA1' }, { name: 'TMEM119' }, { name: 'P2RY12' }],
@@ -203,10 +218,36 @@ export const cellData = {
     customPanel: null,
   },
 
+  homeostatic_astrocyte: {
+    title: 'Homeostatic Astrocyte',
+    category: 'host',
+    color: '#a0c8f1',
+    summary: 'Astrocytes away from the graft, with fine, non-hypertrophic processes.',
+    description: [
+      'Placeholder. Contrast with reactive astrocytes at the graft boundary (smaller soma, thinner processes, little secondary branching).',
+    ],
+    markers: [{ name: 'ALDH1L1' }, { name: 'GFAP', note: 'low' }],
+    papers: [{ title: 'Astrocyte heterogeneity and reactivity (search)', url: pubmed('astrocyte reactivity heterogeneity review') }],
+    assets: { circuitDiagramUrl: null, images: [], videos: [] },
+    customPanel: null,
+  },
+
+  oligodendrocyte: {
+    title: 'Oligodendrocyte',
+    category: 'host',
+    color: '#e7ddb5',
+    summary: 'Myelinating glia of the host CNS.',
+    description: ['Placeholder. Describe oligodendrocyte distribution in the SN and any changes near the graft.'],
+    markers: [{ name: 'OLIG2' }, { name: 'MBP' }],
+    papers: [{ title: 'Oligodendrocytes in Parkinson’s disease (search)', url: pubmed('oligodendrocytes Parkinson disease substantia nigra') }],
+    assets: { circuitDiagramUrl: null, images: [], videos: [] },
+    customPanel: null,
+  },
+
   astrocyte: {
     title: 'Reactive Astrocyte',
     category: 'interface',
-    color: '#34d399',
+    color: '#59eaff',
     summary: 'Astrocytes forming the glial boundary around the implanted graft.',
     description: ['Placeholder. Describe glial boundary formation and GFAP reactivity at the interface.'],
     markers: [{ name: 'GFAP' }, { name: 'ALDH1L1' }],
